@@ -15,8 +15,8 @@
         }
 
         header {
-            background-color: #CDD2C3;
-            color: white;
+            background-color: #959588;            ;
+            color: #EFEBE3;
             padding: 1rem;
             text-align: center;
         }
@@ -29,14 +29,14 @@
             text-align: center;
             padding: 1rem;
             background-color: #333;
-            color: white;
+            color: #EFEBE3;
             position: fixed;
             bottom: 0;
             width: 100%;
         }
 
         a {
-            color: #0073e6;
+            color: #EFEBE3;
             text-decoration: none;
         }
 
@@ -49,21 +49,46 @@
 <body>
     <header>
         <h1>Abbie Wang</h1>
-        <p>Welcome to my personal website!</p>
+        <p style="display: inline-block; margin: 0;">
+            <a href="mailto:abbie.wangxy@gmail.com">Email</a>
+            <span style="margin: 0 10px;">|</span>
+            <a href="https://www.linkedin.com/in/abbiexwang/" target="_blank">LinkedIn</a>
+        </p>
     </header>
     <main>
         <section>
-            <h2>About Me</h2>
+            <h2 style="color: #4B371C;">About Me</h2>
             <p>Hi! I am a product manager with 5+ years of experience in FinTech. With my experience in the past, I have
                 successfully built out post-trade automation software at Balyasny Asset Management and led analytics for
-                B2B insurance clients at Clearwater Analytics. I'm currently pursuing a master of computer science at
+                B2B insurance clients at Clearwater Analytics. I'm currently pursuing a part-time master of computer science at
                 University of Pennsylvania to expand my CS fundamentals.</p>
         </section>
-
         <section>
-            <h2>Contact</h2>
-            <p>Email me at: <a href="mailto:abbie.wangxy@gmail.com">abbie.wangxy@gmail.com</a></p>
-            <p>Connect on <a href="https://www.linkedin.com/in/abbiexwang/" target="_blank">LinkedIn</a></p>
+            <h2 style="color: #4B371C;">Work Experience</h2>
+            <Details>
+                <summary>Senior Business Analyst @ Enfusion</summary>
+                <p>I work on the product management team empowering the Order and Execution Management System (OEMS). This
+                    product provides a front-to-back office order management solution that allows direct broker connectivity and
+                    smart execution.</p>
+            </Details>
+            <Details>
+                <summary>Product Manager @ Balyasny Asset Management</summary>
+                <p>As a product manager for the post-trade positions management system, I help 50+ internal users to achieve
+                    optmized operational workflows such as positions transfer, broker connectivity automation, option auto
+                    expiry tool, and reporting analytics tool. I design user friendly and efficient solutions that power the
+                    operational workflow for a multi-billion hedge fund.</p>
+            </Details>
+            <Details>
+                <summary>Financial Data Analyst @ Clearwater Analytics</summary>
+                <p>I led analytics for the insurance data team and maintained data integrity for 10+ large intitutional clients.
+                    Worked with Sales, Engineering, UI/UX, I drove XFN impact with strategic projects on data transformation.
+                </p>
+            </Details>
+
+        </section>
+        <section>
+            <h2 style="color: #4B371C;">Projects</h2>
+            <p>Coming soon!</p>
         </section>
     </main>
     <footer>
