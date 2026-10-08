@@ -1,101 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abbie Wang</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abbie Wang | Product Manager, Fintech</title>
+<meta name="description" content="Product manager building trading and execution technology. MarketAxess, Enfusion, Balyasny, Clearwater. MAS-CS at UPenn.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F6F8; --panel:#FFFFFF; --ink:#0D1B2A; --muted:#5A6676; --line:#D8DDE4; --accent:#1F5BFF; --accent-soft:#E6EDFF;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0A111B; --panel:#101A28; --ink:#E8EDF4; --muted:#8C99AB; --line:#1F2C3F; --accent:#5B8CFF; --accent-soft:#16253F;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
 
-        header {
-            background-color: #959588;            ;
-            color: #EFEBE3;
-            padding: 1rem;
-            text-align: center;
-        }
+/* top bar */
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:13px}
+nav .brand{font-weight:500}
+nav .brand::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-right:10px;animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25}}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
 
-        main {
-            padding: 2rem;
-        }
+/* hero */
+.hero{padding:88px 0 56px}
+.hero h1{font-size:clamp(40px,7vw,68px);line-height:1.04;letter-spacing:-.03em;font-weight:600;margin:0 0 20px}
+.hero p{max-width:60ch;font-size:19px;color:var(--muted);margin:0}
+.hero p strong{color:var(--ink);font-weight:500}
 
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #333;
-            color: #EFEBE3;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+/* ticker strip */
+.tape{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:var(--panel);margin:8px 0 0;font-family:var(--mono)}
+.tape div{padding:16px 18px;border-right:1px solid var(--line)}
+.tape div:last-child{border-right:0}
+.tape b{display:block;font-size:22px;font-weight:500;color:var(--accent);letter-spacing:-.02em}
+.tape span{font-size:12px;color:var(--muted)}
+@media(max-width:640px){.tape{grid-template-columns:1fr 1fr}.tape div:nth-child(2){border-right:0}.tape div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
 
-        a {
-            color: #EFEBE3;
-            text-decoration: none;
-        }
+/* sections */
+section{padding:56px 0 8px}
+h2{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--muted);margin:0 0 20px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.about p{max-width:68ch;margin:0 0 14px}
 
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+/* experience blotter */
+.blotter{border:1px solid var(--line);background:var(--panel)}
+details{border-bottom:1px solid var(--line)}
+details:last-child{border-bottom:0}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;padding:18px 20px}
+summary::-webkit-details-marker{display:none}
+summary:hover{background:var(--accent-soft)}
+.when{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.what b{display:block;font-weight:600}
+.what span{font-size:14px;color:var(--muted)}
+.tog{font-family:var(--mono);color:var(--accent);transition:transform .2s}
+details[open] .tog{transform:rotate(45deg)}
+details[open] summary{background:var(--accent-soft)}
+.body{padding:4px 20px 22px 186px}
+.body ul{margin:0;padding-left:18px}
+.body li{margin-bottom:8px;max-width:64ch;font-size:15px}
+.tag{display:inline-block;font-family:var(--mono);font-size:11.5px;color:var(--accent);border:1px solid var(--accent);padding:1px 7px;margin:12px 6px 0 0}
+@media(max-width:640px){summary{grid-template-columns:1fr auto}.when{grid-column:1/-1}.body{padding:4px 20px 22px}}
+
+/* education + projects */
+.rows{display:grid;gap:0;border:1px solid var(--line);background:var(--panel)}
+.row{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:18px 20px;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.row b{font-weight:600}
+.row span{display:block;font-size:14px;color:var(--muted)}
+@media(max-width:640px){.row{grid-template-columns:1fr;gap:4px}}
+.empty{padding:22px 20px;color:var(--muted);font-family:var(--mono);font-size:13px;border:1px dashed var(--line)}
+
+/* contact */
+.links{display:flex;flex-wrap:wrap;gap:12px}
+.links a{font-family:var(--mono);font-size:14px;text-decoration:none;padding:10px 16px;border:1px solid var(--ink);transition:background .15s,color .15s}
+.links a:hover{background:var(--ink);color:var(--bg)}
+footer{margin-top:72px;padding:24px 0 40px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--muted)}
+</style>
 </head>
-
 <body>
-    <header>
-        <h1>Abbie Wang</h1>
-        <p style="display: inline-block; margin: 0;">
-            <a href="mailto:abbie.wangxy@gmail.com">Email</a>
-            <span style="margin: 0 10px;">|</span>
-            <a href="https://www.linkedin.com/in/abbiexwang/" target="_blank">LinkedIn</a>
-            <span style="margin: 0 10px;">|</span>
-            <a href="https://github.com/AbbieWang" target="_blank">GitHub</a>
-        </p>
-    </header>
-    <main>
-        <section>
-            <h2 style="color: #4B371C;">About Me</h2>
-            <p>Hi! I am a product manager with 5+ years of experience in FinTech. With my experience in the past, I have
-                successfully built out post-trade automation software at Balyasny Asset Management and led analytics for
-                B2B insurance clients at Clearwater Analytics. I'm currently pursuing a part-time master of computer science at
-                University of Pennsylvania to expand my CS fundamentals.</p>
-        </section>
-        <section>
-            <h2 style="color: #4B371C;">Work Experience</h2>
-            <Details>
-                <summary>Senior Business Analyst @ Enfusion</summary>
-                <p>I work on the product management team empowering the Order and Execution Management System (OEMS). This
-                    product provides a front-to-back office order management solution that allows direct broker connectivity and
-                    smart execution.</p>
-            </Details>
-            <Details>
-                <summary>Product Manager @ Balyasny Asset Management</summary>
-                <p>As a product manager for the post-trade positions management system, I help 50+ internal users to achieve
-                    optmized operational workflows such as positions transfer, broker connectivity automation, option auto
-                    expiry tool, and reporting analytics tool. I design user friendly and efficient solutions that power the
-                    operational workflow for a multi-billion hedge fund.</p>
-            </Details>
-            <Details>
-                <summary>Financial Data Analyst @ Clearwater Analytics</summary>
-                <p>I led analytics for the insurance data team and maintained data integrity for 10+ large intitutional clients.
-                    Worked with Sales, Engineering, UI/UX, I drove XFN impact with strategic projects on data transformation.
-                </p>
-            </Details>
+<div class="wrap">
+  <nav>
+    <span class="brand">abbie.wang</span>
+    <ul>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-        </section>
-        <section>
-            <h2 style="color: #4B371C;">Projects</h2>
-            <p>Coming soon!</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Abbie Wang. All rights reserved.</p>
-    </footer>
+  <header class="hero">
+    <h1>Abbie Wang</h1>
+    <p>Product manager building <strong>trading and execution technology</strong> for fixed income, equities, and hedge funds. Currently at MarketAxess, studying computer science and AI at UPenn.</p>
+  </header>
+
+  <div class="tape" aria-label="Career highlights">
+    <div><b>7+</b><span>years in fintech</span></div>
+    <div><b>$2T+</b><span>cumulative volume on the platform I manage</span></div>
+    <div><b>900+</b><span>institutional clients served at Enfusion</span></div>
+    <div><b>Front to back</b><span>office systems experience</span></div>
+  </div>
+
+  <section id="about" class="about">
+    <h2>About</h2>
+    <p>I build the software that moves orders, positions, and data through financial institutions. My work spans operational automation at Balyasny Asset Management, order and execution management at Enfusion, and automated fixed-income execution at MarketAxess.</p>
+    <p>I'm completing a Master of Applied Science in Computer Science at the University of Pennsylvania to strengthen my engineering fundamentals and explore AI and machine learning. I like bridging finance and technology, and shipping fast.</p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="blotter">
+
+      <details open>
+        <summary>
+          <span class="when">Apr 2026 – Present</span>
+          <span class="what"><b>Product Manager</b><span>MarketAxess · Automated Execution Platform</span></span>
+          <span class="tog">+</span>
+        </summary>
+        <div class="body">
+          <ul>
+            <li>Sole product manager for an automated fixed-income execution platform with $2T+ in cumulative trading volume, owning strategy, roadmap, and prioritization.</li>
+            <li>Lead integration of Pragma's algorithmic trading technology across 4 engineering teams and 50+ stakeholders in Sales, Engineering, Customer Integration, Client Services, Operations, and QA.</li>
+            <li>Own the FIX-based order and execution workflow between MarketAxess and Pragma, from message specifications through testing and client onboarding.</li>
+            <li>Delivered a dealer inventory average pricing source for automated trading, extending automation in European markets.</li>
+          </ul>
+          <span class="tag">FIX</span><span class="tag">Fixed income</span><span class="tag">Roadmap</span>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="when">Mar 2024 – Apr 2026</span>
+          <span class="what"><b>Senior Business Analyst</b><span>Enfusion (now CWAN) · Order &amp; Execution Management</span></span>
+          <span class="tog">+</span>
+        </summary>
+        <div class="body">
+          <ul>
+            <li>Drove technical solutions for a multi-asset OEMS serving 900+ institutional clients and 6,000+ daily active users.</li>
+            <li>Designed and launched a convertible bond pairs order ticket that auto-populates hedge equity quantities, enabling delta-hedged order entry and recurring incremental revenue.</li>
+            <li>Defined requirements and API specifications for brokerage order routing, pairs trading, and automated trade workflows, and ran user acceptance testing.</li>
+            <li>Worked with Engineering, QA, Client Success, and Product Support (50+ members) to resolve 200+ client-reported issues.</li>
+            <li>Produced a video series on order generation methods for 1,000+ employees, speeding platform adoption.</li>
+          </ul>
+          <span class="tag">OEMS</span><span class="tag">APIs</span><span class="tag">Pairs Trading</span>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="when">Jul 2021 – Jan 2024</span>
+          <span class="what"><b>Product Manager</b><span>Balyasny Asset Management · Positions Management</span></span>
+          <span class="tog">+</span>
+        </summary>
+        <div class="body">
+          <ul>
+            <li>Led roadmap and strategy for an operational process automation platform, working across 2 engineering managers and a 30+ person cross-functional team.</li>
+            <li>Designed an internal analytics platform to optimize holding structure across accounts, with 20% efficiency gains from automated reconciliation.</li>
+            <li>Gathered user stories from 20+ operations users and turned them into functional and technical specifications.</li>
+            <li>Owned the product lifecycle from problem definition to post-launch analysis, and evaluated third-party vendors for potential adoption.</li>
+            <li>Set quarterly KPIs tied to the COO scorecard and reprioritized initiatives to protect critical milestones.</li>
+          </ul>
+          <span class="tag">Agile</span><span class="tag">Jira</span><span class="tag">Automation</span>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="when">Jul 2020 – Jul 2021</span>
+          <span class="what"><b>Financial Data Analyst</b><span>Clearwater Analytics · Regulatory Reporting</span></span>
+          <span class="tog">+</span>
+        </summary>
+        <div class="body">
+          <ul>
+            <li>Led analytics for large institutional clients, maintaining datasets that automate investment accounting and regulatory reports.</li>
+            <li>Shaped product strategy through focus groups with 10+ institutional clients.</li>
+            <li>Maintained SQL stored procedures to monitor ETL data quality, cutting data anomalies by 15%.</li>
+          </ul>
+          <span class="tag">SQL</span><span class="tag">ETL</span><span class="tag">RegTech</span>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="rows">
+      <div class="row">
+        <span class="when">2024 – 2027</span>
+        <div><b>University of Pennsylvania</b><span>M.S.E. / MAS Computer Science · Concentration in Artificial Intelligence</span></div>
+      </div>
+      <div class="row">
+        <span class="when">2016 – 2020</span>
+        <div><b>Colorado College</b><span>B.A. Mathematical Economics · Cum Laude, Dean's List</span></div>
+      </div>
+      <div class="row">
+        <span class="when">Issued Jul 2022</span>
+        <div><b>Pragmatic Institute Certified, Level II</b><span>Product Management</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="empty">// in development. Check back soon.</div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="links">
+      <a href="mailto:abbie.wangxy@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/abbiexwang/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>&copy; 2026 Abbie Wang</footer>
+</div>
 </body>
-
 </html>
